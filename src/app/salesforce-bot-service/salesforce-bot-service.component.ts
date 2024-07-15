@@ -21,7 +21,7 @@ export class SalesforceBotServiceComponent {
     if (!this.scriptLoaded) {
       const script = document.createElement('script');
       script.type = 'text/javascript';
-      script.src = 'https://colombiachef-dev-ed.develop.my.site.com/ESWimplementacionbot1713187491532/assets/js/bootstrap.min.js';
+      script.src = 'https://colombiachef-dev-ed.develop.my.site.com/ESWimplementacionweb1721061511080/assets/js/bootstrap.min.js';
       script.onload = this.initEmbeddedMessaging;
       document.body.appendChild(script);
       this.scriptLoaded = true;
@@ -34,8 +34,8 @@ export class SalesforceBotServiceComponent {
         (window as any).embeddedservice_bootstrap.settings.language = 'es';
         (window as any).embeddedservice_bootstrap.init(
           '00Dbm000001euKg',
-          'implementacion_bot',
-          'https://colombiachef-dev-ed.develop.my.site.com/ESWimplementacionbot1713187491532',
+          'implementacion_web',
+          'https://colombiachef-dev-ed.develop.my.site.com/ESWimplementacionweb1721061511080',
           {
             scrt2URL: 'https://colombiachef-dev-ed.develop.my.salesforce-scrt.com'
           }
