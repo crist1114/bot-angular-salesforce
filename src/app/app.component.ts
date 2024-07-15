@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { SalesforceBotServiceComponent } from './salesforce-bot-service/salesforce-bot-service.component';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +10,12 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'bot-project';
+  
+  constructor(private salesforceBotService: SalesforceBotServiceComponent) {}
+
+  ngOnInit(): void {
+    this.salesforceBotService.loadScript();
+  }
+
+
 }
