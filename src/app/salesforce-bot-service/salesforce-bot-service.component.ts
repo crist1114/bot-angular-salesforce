@@ -30,18 +30,23 @@ export class SalesforceBotServiceComponent {
 
   private initEmbeddedMessaging() {
     try {
-      (window as any).embeddedservice_bootstrap.settings.language = 'es';
-      (window as any).embeddedservice_bootstrap.init(
-        '00Dbm000001euKg',
-        'implementacion_bot',
-        'https://colombiachef-dev-ed.develop.my.site.com/ESWimplementacionbot1713187491532',
-        {
-          scrt2URL: 'https://colombiachef-dev-ed.develop.my.salesforce-scrt.com'
-        }
-      );
+      if (typeof (window as any).embeddedservice_bootstrap !== 'undefined') {
+        (window as any).embeddedservice_bootstrap.settings.language = 'es';
+        (window as any).embeddedservice_bootstrap.init(
+          '00Dbm000001euKg',
+          'implementacion_bot',
+          'https://colombiachef-dev-ed.develop.my.site.com/ESWimplementacionbot1713187491532',
+          {
+            scrt2URL: 'https://colombiachef-dev-ed.develop.my.salesforce-scrt.com'
+          }
+        );
+      } else {
+        console.error('embeddedservice_bootstrap is undefined');
+      }
     } catch (err) {
       console.error('Error loading Embedded Messaging: ', err);
     }
   }
+  
 }
 
